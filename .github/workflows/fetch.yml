@@ -39,6 +39,6 @@ jobs:
             git config --global user.email "bot@ark-builders.dev"
             git config --global user.name "ARK Builders Bot"
             git add issues.json
-            git commit -m "Automated update of rate"
+            git commit -m "Indexing GitHub issues"
             git push
           fi

@@ -8,8 +8,8 @@ async function callApi() {
       repositories = repositories.data;
 
       for (const repo of repositories) {
-        const issues = await axios.get('https://api.github.com/repos/ARK-Builders/'+repo+'/issues');
-        
+        const issues = await axios.get('https://api.github.com/repos/ARK-Builders/'+repo.name+'/issues');
+      
         if (issues.status === 200) {
           if(issues.data.length > 0){
            for (const issue of issues.data) {
@@ -24,7 +24,9 @@ async function callApi() {
                   user_avatar: issue.user.avatar_url,
                   date: new Date(issue.created_at),
                   repo: repoUrl,
-                  number: issue.number
+                  number: issue.number,
+                  platforms:repo.platforms,
+                  languages:repo.languages
                 })
               }
             }

@@ -1,15 +1,15 @@
 [
-  "arklib",
-  "ark-cli",
-  "arklib-android",
-  "ark-filepicker",
-  "ark-components-android",
-  "ARK-Navigator",
-  "ARK-Shelf",
-  "ARK-Shelf-Desktop",
-  "ARK-Retouch",
-  "ARK-Rate",
-  "ARK-Rate-Desktop",
-  "ARK-Memo",
-  "ARK-Globe"
+  {"name":"arklib","languages":["Rust"],"platforms":["Desktop","Android"]},
+  {"name":"ark-cli","languages":["Rust"],"platforms":["Desktop"]},
+  {"name":"arklib-android","languages":["Kotlin","Rust"],"platforms":["Android"]},
+  {"name":"ark-filepicker","languages":["Kotlin"],"platforms":["Android"]},
+  {"name":"ark-components-android","languages":["Kotlin"],"platforms":["Android"]},
+  {"name":"ARK-Navigator","languages":["Kotlin"],"platforms":["Android"]},
+  {"name":"ARK-Shelf","languages":["Kotlin"],"platforms":["Android"]},
+  {"name":"ARK-Shelf-Desktop","languages":["Rust"],"platforms":["Desktop"]},
+  {"name":"ARK-Retouch","languages":["Kotlin"],"platforms":["Android"]},
+  {"name":"ARK-Rate","languages":["Kotlin"],"platforms":["Android"]},
+  {"name":"ARK-Rate-Desktop","languages":["TypeScript"],"platforms":["Desktop"]},
+  {"name":"ARK-Memo","languages":["Kotlin"],"platforms":["Android"]},
+  {"name":"ARK-Globe","languages":["Kotlin"],"platforms":["Android"]}
 ]

@@ -29,14 +29,16 @@ jobs:
         id: fetchIssues
         run: |
           data=$(node -e "const fetchIssues = require('./fetchIssues'); async function main() { try { const data = await fetchIssues(); console.log(JSON.stringify(data));} catch (error) { console.error('Error retrieving data:', error);}}; main()")
+          cp issues.json issues.json.res
           echo "$data" > issues.json
 
-          
-          
       - name: Push into Git
         run: |-
-          git config --global user.email "bot@ark-builders.dev"
-          git config --global user.name "ARK Builders Bot"
-          git add issues.json
-          git commit -m "Automated update of rate"
-          git push
+          if ! diff -q issues.json{,.res} > /dev/null
+          then
+            git config --global user.email "bot@ark-builders.dev"
+            git config --global user.name "ARK Builders Bot"
+            git add issues.json
+            git commit -m "Automated update of rate"
+            git push
+          fi

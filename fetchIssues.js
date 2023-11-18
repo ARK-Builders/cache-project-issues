@@ -9,7 +9,7 @@ async function callApi() {
 
       for (const repo of repositories) {
         const issues = await axios.get('https://api.github.com/repos/ARK-Builders/'+repo.name+'/issues');
-      
+
         if (issues.status === 200) {
           if(issues.data.length > 0){
            for (const issue of issues.data) {

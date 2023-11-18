@@ -6,7 +6,7 @@ async function callApi() {
     var repositories = await axios.get('https://raw.githubusercontent.com/ARK-Builders/cache-project-issues/main/repos-list.json');
     if (repositories.status === 200) {
       repositories = repositories.data;
-
+ 
       for (const repo of repositories) {
         const issues = await axios.get('https://api.github.com/repos/ARK-Builders/'+repo.name+'/issues');
 
@@ -19,7 +19,7 @@ async function callApi() {
               if(assignees.length == 0 && issue.state == 'open'){
                 issuesList.push({
                   title: issue.title,
-                  labels: labels,
+                  labels: labels.filter(item => item == 'bug' || item == 'good first issue' || item == 'feature' || item == 'enhancement'),
                   user: issue.user.login,
                   user_avatar: issue.user.avatar_url,
                   date: new Date(issue.created_at),

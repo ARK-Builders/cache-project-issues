@@ -29,15 +29,6 @@
     ]
   },
   {
-    "name": "ark-filepicker",
-    "languages": [
-      "Kotlin"
-    ],
-    "platforms": [
-      "Android"
-    ]
-  },
-  {
     "name": "ark-components-android",
     "languages": [
       "Kotlin"
